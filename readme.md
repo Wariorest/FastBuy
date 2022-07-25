@@ -14,7 +14,7 @@ There is my diploma work project for SSU.
 * [React.js](https://reactjs.org/)
 
 ### Server dependencies:
-# command for install dependecies for server if u don't have: `npm install express pg pg-hstore sequelize cors dotenv`
+command for install dependecies for server if u don't have: `npm install express pg pg-hstore sequelize cors dotenv`
 
 
 
