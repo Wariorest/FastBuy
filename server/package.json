@@ -8,7 +8,7 @@
     "dev": "nodemon /index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vladislav Martynov",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

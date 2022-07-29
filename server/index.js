@@ -1,26 +1,29 @@
 import express from "express";
 import dotenv from "dotenv";
 import sequelize from "./db.js"
-
+import * as models from "./models/models.js";
+import cors from "cors";
 
 dotenv.config()
 
 const PORT = process.env.PORT || 3000;
 const app = express();
+app.use(cors());
+app.use(express.json());
 
 
 
 
 
-const startApp = async ()=>{
-    try{
+const startApp = async () => {
+    try {
         await sequelize.authenticate();
         await sequelize.sync();
-        
+
         app.listen(PORT, () => {
             console.log('server started on port ' + PORT);
         })
-    }catch(err){
+    } catch (err) {
         console.log(err);
     }
 }

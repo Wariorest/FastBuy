@@ -1,5 +1,5 @@
 import sequelize from "../db.js";
-import { DataTypes } from "sequelize/types/index.js";
+import DataTypes  from "sequelize";
 
 const User = sequelize.define('user', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
@@ -78,4 +78,4 @@ Type.belongsToMany(Brand, { through: TypeBrand });
 Brand.belongsToMany(Type, { through: TypeBrand });
 
 
-export { User, Cart, CartDevice, Device, Type, Brand, Raiting, DeviceInfo, };
+export { User, Cart, CartDevice, Device, Type, Brand, Raiting, DeviceInfo };
