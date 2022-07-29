@@ -1,8 +1,9 @@
-class BrandController{
-    async create(req,res){
+class BrandController {
+    async create(req, res) {
 
     }
-    async getAll(req,res){
+
+    async getAll(req, res) {
 
     }
 }

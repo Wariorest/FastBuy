@@ -1,12 +1,14 @@
-class DeviceController{
-    async create(req,res){
+class DeviceController {
+    async create(req, res) {
 
     }
-    async getAll(req,res){
+
+    async getAll(req, res) {
 
     }
-    async getOne(req,res){
-        
+
+    async getOne(req, res) {
+
     }
 }
 

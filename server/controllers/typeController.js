@@ -1,8 +1,9 @@
-class TypeController{
-    async create(req,res){
+class TypeController {
+    async create(req, res) {
 
     }
-    async getAll(req,res){
+
+    async getAll(req, res) {
 
     }
 

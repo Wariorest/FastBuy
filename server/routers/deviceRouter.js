@@ -1,5 +1,6 @@
 import Router from "express";
 import DeviceController from "../controllers/deviceController.js";
+
 const router = new Router();
 
 router.post('/', DeviceController.create);
