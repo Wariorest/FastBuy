@@ -1,8 +1,9 @@
 import Router from "express";
+import DeviceController from "../controllers/deviceController.js";
 const router = new Router();
 
-router.post('/',);
-router.get('/',);
-router.get('/:id')
+router.post('/', DeviceController.create);
+router.get('/', DeviceController.getAll);
+router.get('/:id', DeviceController.getOne);
 
 export default router;

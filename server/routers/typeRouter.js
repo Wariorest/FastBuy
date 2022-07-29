@@ -1,8 +1,9 @@
 import Router from "express";
+import TypeController from "../controllers/typeController.js";
 const router = new Router();
 
-router.post('/',);
-router.get('/',);
+router.post('/',TypeController.create);
+router.get('/',TypeController.getAll);
 
 
 export default router;
