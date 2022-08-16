@@ -27,4 +27,4 @@ const startApp = async () => {
         console.log(err);
     }
 }
-startApp()
+startApp();
