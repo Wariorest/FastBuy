@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(express.static(path.resolve(
     path.resolve(), 'static'
     ))
+
 );
 app.use(fileUpload({ }));
 

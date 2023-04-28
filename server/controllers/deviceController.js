@@ -11,7 +11,6 @@ class DeviceController {
             let fileName = uuidV4() + ".jpg";
             console.log(path.resolve())
             await img.mv(path.resolve(path.resolve(), 'static', fileName));
-
             const device = await Device
                 .create({name, price, brandId, typeId, img: fileName});
 
