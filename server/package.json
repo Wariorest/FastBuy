@@ -12,15 +12,16 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
-    "pg": "^8.7.3",
+    "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.21.3"
+    "semver": "^7.5.0",
+    "sequelize": "^6.31.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19",
-    "uuid": "^9.0.0"
+    "nodemon": "^2.0.19"
   }
 }
