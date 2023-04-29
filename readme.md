@@ -18,9 +18,14 @@ There is my diploma work project for SSU.
 * [PostgreSQL](https://www.postgresql.org/)
 
 ### Server dependencies:
-command for install dependecies for server if u don't have: `npm install express pg pg-hstore sequelize cors dotenv`
-#### Installed dependencies with commands SERVER `npm i -D nodemon` `npm i express-fileupload` `npm i uuid` `npm i jsonwebtoken bcrypt`
-#### Installed dependencies with commands CLIENT `npm i axios react-router-dom mobx mobx-react-lite`
+command for install dependencies for server if u don't have: `npm install express pg pg-hstore sequelize cors dotenv`
+#### Installed dependencies with commands SERVER:
+##### `npm i -D nodemon`<br>
+##### `npm i express-fileupload` <br> 
+##### `npm i uuid` `npm i jsonwebtoken bcrypt` <br>
+#### Installed dependencies with commands CLIENT:
+##### `npm i axios react-router-dom mobx mobx-react-lite ` <br> 
+##### `npm install react-bootstrap bootstrap`
 
 
 
