@@ -19,7 +19,7 @@ There is my diploma work project for SSU.
 
 ### Server dependencies:
 command for install dependecies for server if u don't have: `npm install express pg pg-hstore sequelize cors dotenv`
-#### Must have developer dependecie `npm i -D nodemon` `npm i express-fileupload` `npm i uuid`
+#### Must have developer dependecie `npm i -D nodemon` `npm i express-fileupload` `npm i uuid` `npm i jsonwebtoken bcrypt`
 
 
 
