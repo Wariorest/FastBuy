@@ -44,12 +44,10 @@ class UserController {
     }
 
     async check(req, res, next) {
-        const {id} = req.query;
-        if(!id){
-            return next(ApiError.badRequest("id is wasn't input"));
-        }
-        res.json(id);
+        const token = generateJWT(req.user.id, req.user.email, req.user.role);
+        return res.json({token});
     }
 }
 
 export default new UserController();
+
