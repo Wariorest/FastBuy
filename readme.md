@@ -24,8 +24,9 @@ command for install dependencies for server if u don't have: `npm install expres
 ##### `npm i express-fileupload` <br> 
 ##### `npm i uuid` `npm i jsonwebtoken bcrypt` <br>
 #### Installed dependencies with commands CLIENT :
-##### `npm i axios react-router-dom mobx mobx-react-lite ` <br> 
+##### `npm i axios react-router-dom@5.3.0 mobx mobx-react-lite ` <br> 
 ##### `npm install react-bootstrap bootstrap`
+
 
 
 
