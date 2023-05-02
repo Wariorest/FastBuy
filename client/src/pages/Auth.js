@@ -17,10 +17,12 @@ const Auth = () => {
                 <Form className="d-flex flex-column">
                     <Form.Control
                         className="mt-3"
+                        type="email"
                         placeholder="Email"
                     />
                     <Form.Control
                         className="mt-3"
+                        type="password"
                         placeholder="Password"
                     />
                     <Button
