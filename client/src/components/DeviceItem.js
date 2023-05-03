@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, Col, Image} from "react-bootstrap";
-import star from '../assets/raiting_star.png';
+//import star from '../assets/raiting_star.png';
 import {useNavigate} from "react-router-dom";
 import {DEVICE_ROUTE} from "../utils/consts";
 const DeviceItem = ({device}) => {
@@ -21,14 +21,7 @@ const DeviceItem = ({device}) => {
                     <div>
                         Test item for selling...
                     </div>
-                    <div className={"d-flex align-items-center"}>
-                        <div>{device.rating}</div>
-                        <Image
-                            src={star}
-                            width={14}
-                            height={14}
-                        />
-                    </div>
+
                 </div>
                 <div>{device.name}</div>
             </Card>
