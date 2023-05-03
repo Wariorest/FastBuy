@@ -27,16 +27,16 @@ const DevicePage = () => {
                 </Col>
                 <Col>
                     <Card
-                        className={'d-flex align-items-center justify-content-around py-4'}
-                        style={{border:"none"}}
+                        className={'d-flex align-items-center justify-content-around py-4 mt-4'}
+                        //style={{border:"none"}}
                     >
                         <h3>Description:</h3>
                         {
                             description.map((info, index) =>
                                 index % 2 === 0 ?
-                                    <Row key={info.id} style={{backgroundColor:'lightgrey', padding:3}}>{info.title}:{info.description}</Row>
+                                    <Row key={info.id} style={{backgroundColor:'lightgrey', padding:3}}>{info.title} : {info.description}</Row>
                                     :
-                                    <Row key={info.id} style={{backgroundColor:'whitesmoke', padding:3}}>{info.title}:{info.description}</Row>
+                                    <Row key={info.id} style={{backgroundColor:'whitesmoke', padding:3}}>{info.title} : {info.description}</Row>
                             )
                         }
                     </Card>
