@@ -21,7 +21,6 @@ const Device = sequelize.define('device', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
     price: {type: DataTypes.INTEGER, allowNull: false},
-    raiting: {type: DataTypes.DOUBLE, defaultValue: 0.0},
     img: {type: DataTypes.STRING, allowNull: false},
 });
 
@@ -35,10 +34,7 @@ const Brand = sequelize.define('brand', {
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
 });
 
-const Raiting = sequelize.define('raiting', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    rate: {type: DataTypes.DOUBLE, allowNull: false},
-});
+
 
 const DeviceInfo = sequelize.define('device_info', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -53,8 +49,7 @@ const TypeBrand = sequelize.define('type_brand', {
 User.hasOne(Cart);
 Cart.belongsTo(User);
 
-User.hasMany(Raiting);
-Raiting.belongsTo(User);
+
 
 Cart.hasMany(CartDevice);
 CartDevice.belongsTo(Cart);
@@ -65,8 +60,7 @@ Device.belongsTo(Type);
 Brand.hasMany(Device);
 Device.belongsTo(Brand);
 
-Device.hasMany(Raiting);
-Raiting.belongsTo(Device);
+
 
 Device.hasMany(CartDevice);
 CartDevice.belongsTo(Device);
@@ -78,4 +72,4 @@ Type.belongsToMany(Brand, {through: TypeBrand});
 Brand.belongsToMany(Type, {through: TypeBrand});
 
 
-export {User, Cart, CartDevice, Device, Type, Brand, Raiting, DeviceInfo};
+export {User, Cart, CartDevice, Device, Type, Brand, DeviceInfo};
