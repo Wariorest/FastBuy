@@ -1,5 +1,4 @@
 import axios from "axios";
-import config from "bootstrap/js/src/util/config";
 
 const $host = axios.create({
     baseURL: process.env.REACT_APP_API_URL
@@ -10,11 +9,11 @@ const $authHost = axios.create({
 })
 
 const authInterceptor = config => {
-    config.header.authorization = `Bearer ${localStorage.getItem('token')}`
+    config.headers.authorization = `Bearer ${localStorage.getItem('token')}`
     return config
 }
 
-$authHost.interceptors.request.use(authInterceptor);
+$authHost.interceptors.request.use(authInterceptor)
 
 export {
     $host,

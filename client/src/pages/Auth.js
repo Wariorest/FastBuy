@@ -9,14 +9,16 @@ const Auth = () => {
     const isLogin = location.pathname === LOGIN_ROUTE;
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
     const click = async ()=>{
-        if(isLogin){
+        if (isLogin){
             const response = await login(email,password)
         }else {
-            const response = await registration(email, password)
+            const response = await registration(email,password)
         }
+
     }
-    console.log(location)
+
     return (
         <Container
             className={"d-flex justify-content-center align-items-center"}
