@@ -6,9 +6,16 @@ import {ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE} from "../utils/consts";
 import {observer} from "mobx-react-lite";
 import {useNavigate} from "react-router-dom";
 
+
+
 const NavBar = observer(() => {
     const {user} = useContext(Context);
     const navigate = useNavigate();
+    const logOut = ()=>{
+        user.setUser({});
+        user.setIsAuth(false);
+    }
+
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
@@ -25,8 +32,7 @@ const NavBar = observer(() => {
                             variant={"outline-light"}
                             className={"ms-2"}
                             onClick={()=>{
-                                user.setIsAuth(false)
-                                navigate(LOGIN_ROUTE)
+                                logOut()
                             }}
                         >
                             Sign out
