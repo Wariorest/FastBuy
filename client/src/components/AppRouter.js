@@ -11,7 +11,7 @@ import Shop from "../pages/Shop";
 
 
 const AppRouter = observer(() =>  {
-    const {device, user} = useContext(Context)
+    const {user} = useContext(Context)
     //console.log(user)
    // console.log(device)
     return(
