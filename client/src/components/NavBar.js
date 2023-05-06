@@ -24,14 +24,17 @@ const NavBar = observer(() => {
                         <Button
                             variant={"outline-light"}
                             className={"ms-2"}
-                            onClick={()=> navigate(LOGIN_ROUTE)}
+                            onClick={()=>{
+                                user.setIsAuth(false)
+                                navigate(LOGIN_ROUTE)
+                            }}
                         >
                             Sign out
                         </Button>
                     </Nav>
                     :
                     <Nav className="ms-auto" style={{color: "white"}}>
-                        <Button variant={"outline-light"} onClick={() => user.setIsAuth(true)}>Authorization</Button>
+                        <Button variant={"outline-light"} onClick={() => navigate(LOGIN_ROUTE)}>Authorization</Button>
                     </Nav>
                 }
             </Container>
