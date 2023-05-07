@@ -1,14 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, Card, Col, Container, Image, Row} from "react-bootstrap";
-
+import {useParams} from "react-router-dom";
+import {fetchDevices, fetchOneDevice} from "../http/deviceAPI";
+import data from "bootstrap/js/src/dom/data";
 const DevicePage = () => {
-   const [device,setDevice] = useState({info:[]})
+   const [device,setDevice] = useState({info:[]});
+   const {id} = useParams();
+   console.log(id)
+   useEffect(()=>{
+        fetchOneDevice(id).then(data => setDevice(data));
+   },[])
     return (
         <Container className="mt-5">
             <Row>
                 <Col md={4} className={"d-flex flex-column align-items-center mt-4"}>
                     <h1>{device.name}</h1>
-                    <Image width={300} height={300} src={device.img}/>
+                    <Image width={300} height={300} src={process.env.REACT_APP_API_URL + device.img}/>
                 </Col>
                 <Col>
                     <Card
