@@ -13,7 +13,7 @@ const DeviceItem = ({device}) => {
                 border={"light"}
             >
                 <Image
-                    src={device.img}
+                    src={process.env.REACT_APP_API_URL + device.img}
                     width={150}
                     height={150}
                 />
