@@ -6,7 +6,10 @@ import {DEVICE_ROUTE} from "../utils/consts";
 
 const DeviceItem = ({device}) => {
     const navigate = useNavigate();
-    const brandName = '';
+    const brandName = ()=>{
+
+    }
+
     //console.log(navigate)
     return (
         <Col md={3} className={"mt-3"} onClick={() => navigate(DEVICE_ROUTE + '/' + device.id)}>
@@ -21,7 +24,7 @@ const DeviceItem = ({device}) => {
                 />
                 <div className={"text-black-50 d-flex justify-content-between align-items-center mt-2"}>
                     <div>
-                        {brandName}
+                        {console.log(device)}
                     </div>
 
                 </div>

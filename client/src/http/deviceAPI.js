@@ -38,7 +38,7 @@ export const setDescription = async (_id, text) => {
     return data
 }
 
-export const fetchDevices = async (typeId, brandId, page, limit) => {
+export const fetchDevices = async (typeId, brandId, page, limit = 9) => {
     const {data} = await $host.get('api/device', {params: {
             typeId, brandId, page, limit
         }})
