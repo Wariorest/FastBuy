@@ -6,7 +6,7 @@ import data from "bootstrap/js/src/dom/data";
 const DevicePage = () => {
    const [device,setDevice] = useState({info:[]});
    const {id} = useParams();
-   console.log(id)
+
    useEffect(()=>{
         fetchOneDevice(id).then(data => setDevice(data));
    },[])
@@ -15,7 +15,7 @@ const DevicePage = () => {
             <Row>
                 <Col md={4} className={"d-flex flex-column align-items-center mt-4"}>
                     <h1>{device.name}</h1>
-                    <Image width={300} height={300} src={process.env.REACT_APP_API_URL + device.img}/>
+                    <Image width={300} height={300} src={process.env.REACT_APP_API_URL + '/' + device.img}/>
                 </Col>
                 <Col>
                     <Card
@@ -42,7 +42,7 @@ const DevicePage = () => {
                         <Button
                             variant={"outline-dark"}
                         >
-                            Add to cart
+                            Buy
                         </Button>
                     </Card>
                 </Col>
