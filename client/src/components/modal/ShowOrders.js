@@ -1,11 +1,24 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import {createBrand, makeOrder} from "../../http/deviceAPI";
-import {Button, Form, Modal} from "react-bootstrap";
+import {Button, Col, Form, Modal, Row, Table} from "react-bootstrap";
+
 
 const ShowOrders = ({show, onHide}) => {
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [info, setInfo] = useState('');
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/api/order');
+                const jsonData = await response.json();
+                setData(jsonData);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <Modal
@@ -16,33 +29,30 @@ const ShowOrders = ({show, onHide}) => {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Order form
+                    Order list
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form
-
-                >
-                    <Form.Control
-                        placeholder={'Input your name'}
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                        className={'mb-3'}
-                    />
-                    <Form.Control
-                        placeholder={'Input phone number'}
-                        value={phone}
-                        onChange={e => setPhone(e.target.value)}
-                        className={'mb-3'}
-                    />
-                    <Form.Control
-                        placeholder={'Input additional info about device'}
-                        value={info}
-                        onChange={e => setInfo(e.target.value)}
-                        className={'mb-3'}
-                    />
-
-                </Form>
+                <Table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Info</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {data.map((item) => (
+                        <tr key={item.id}>
+                            <td>{item.id}</td>
+                            <td>{item.name}</td>
+                            <td>{item.phone}</td>
+                            <td>{item.info}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </Table>
             </Modal.Body>
             <Modal.Footer>
 
