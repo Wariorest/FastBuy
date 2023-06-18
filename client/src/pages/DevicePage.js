@@ -3,8 +3,11 @@ import {Button, Card, Col, Container, Image, Row} from "react-bootstrap";
 import {useParams} from "react-router-dom";
 import {fetchDevices, fetchOneDevice} from "../http/deviceAPI";
 import data from "bootstrap/js/src/dom/data";
+import CreateType from "../components/modal/CreateType";
+import CreateOrder from "../components/modal/CreateOrder";
 const DevicePage = () => {
    const [device,setDevice] = useState({info:[]});
+   const [orderVisible, setOrderVisible] = useState(false);
    const {id} = useParams();
 
    useEffect(()=>{
@@ -41,9 +44,11 @@ const DevicePage = () => {
                         <h3 className={"align-self-center"}>Price from: {device.price} $</h3>
                         <Button
                             variant={"outline-dark"}
+                            onClick={()=>setOrderVisible(true)}
                         >
                             Buy
                         </Button>
+                        <CreateOrder show={orderVisible} onHide={()=> setOrderVisible(false)}/>
                     </Card>
                 </Col>
             </Row>

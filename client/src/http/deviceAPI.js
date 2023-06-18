@@ -28,6 +28,11 @@ export const createDevice = async (device) => {
     return data
 }
 
+export const makeOrder = async (order)=>{
+    const {data} = await $host.post('api/order', order);
+    return data;
+}
+
 export const delDevice = async (id) => {
     const {data} = await $authHost.post('api/device/del/'+ id)
     return data
