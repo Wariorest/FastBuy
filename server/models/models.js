@@ -45,6 +45,12 @@ const DeviceInfo = sequelize.define('device_info', {
 const TypeBrand = sequelize.define('type_brand', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
 });
+const Order = sequelize.define('order', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, allowNull:false},
+    phone: {type: DataTypes.STRING, allowNull: false},
+    info: {type: DataTypes.STRING, allowNull: false},
+});
 
 User.hasOne(Cart);
 Cart.belongsTo(User);
@@ -72,4 +78,4 @@ Type.belongsToMany(Brand, {through: TypeBrand});
 Brand.belongsToMany(Type, {through: TypeBrand});
 
 
-export {User, Cart, CartDevice, Device, Type, Brand, DeviceInfo};
+export {User, Cart, CartDevice, Device, Type, Brand, DeviceInfo, Order};
